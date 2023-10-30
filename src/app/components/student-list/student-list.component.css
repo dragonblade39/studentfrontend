@@ -1,0 +1,8 @@
+.text-left {
+  text-align: left;
+}
+
+td,
+th {
+  text-align: left;
+}

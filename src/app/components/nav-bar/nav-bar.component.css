@@ -1,0 +1,13 @@
+.white {
+    color: white
+}
+
+@media screen and (max-width:488px) {
+    .he {
+        padding-left: 10%;
+    }
+
+    .hf {
+        padding-left: 5%;
+    }
+}

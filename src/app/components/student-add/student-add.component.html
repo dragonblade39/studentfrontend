@@ -1,0 +1,50 @@
+<h1 class="px-7">Add Student</h1>
+<form class="p-5 border" [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+  <div class="mb-3">
+    <label for="name" class="form-label">Name:</label>
+    <input
+      formControlName="name"
+      type="text"
+      class="form-control"
+      required
+      name="name"
+      id="name"
+      aria-describedby="emailHelp"
+    />
+    <span *ngIf="name && name.invalid && name.touched"
+      >This field is mandatory.</span
+    >
+  </div>
+  <div class="mb-3">
+    <label for="department" class="form-label">Department:</label>
+    <input
+      formControlName="department"
+      type="text"
+      class="form-control"
+      required
+      name="department"
+      id="department"
+    />
+    <span *ngIf="department && department.invalid && department.touched"
+      >This field is mandatory.</span
+    >
+  </div>
+  <div class="mb-3">
+    <label for="phonenumber" class="form-label">Phone Number:</label>
+    <input
+      formControlName="phonenumber"
+      type="phone"
+      class="form-control"
+      required
+      name="phonenumber"
+      id="phonenumber"
+    />
+    <span *ngIf="phonenumber && phonenumber.invalid && phonenumber.touched"
+      >This field is mandatory.</span
+    >
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="!studentForm.valid">
+    Add Student
+  </button>
+</form>
