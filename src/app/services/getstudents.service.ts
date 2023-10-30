@@ -9,14 +9,17 @@ import { Student } from '../.././models/student.model';
 })
 export class GetstudentsService {
   constructor(private _http: HttpClient) {}
-  apiUrl = 'http://localhost:8080/';
+  apiUrl = 'https://studentdatabase-production-6a49.up.railway.app/';
 
   // Get all data
   getAllData(): Observable<Student[]> {
     return this._http
-      .get<Student[]>('http://localhost:8080/getAllStudent', {
-        observe: 'response',
-      })
+      .get<Student[]>(
+        'https://studentdatabase-production-6a49.up.railway.app/getAllStudent',
+        {
+          observe: 'response',
+        }
+      )
       .pipe(
         map((response) => response.body || []) // Use defaultIfEmpty to provide an empty array
       );
@@ -24,6 +27,8 @@ export class GetstudentsService {
 
   getSingleStudent(id: number): Observable<any> {
     console.log(id);
-    return this._http.get(`http://localhost:8080/getById/${id}`);
+    return this._http.get(
+      `https://studentdatabase-production-6a49.up.railway.app/getById/${id}`
+    );
   }
 }
