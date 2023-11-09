@@ -7,11 +7,11 @@ import { Observable } from 'rxjs';
 })
 export class StudentService {
   constructor(private _http: HttpClient) {}
-  apiUrl = 'https://studentdatabase-production-6a49.up.railway.app/';
+  apiUrl = 'https://studentdatabase-production-a54b.up.railway.app/';
 
   createNewUser(addStudent: any): Observable<any> {
     return this._http.post(
-      'https://studentdatabase-production-6a49.up.railway.app/addStudent',
+      'https://studentdatabase-production-a54b.up.railway.app/addStudent',
       addStudent
     );
   }

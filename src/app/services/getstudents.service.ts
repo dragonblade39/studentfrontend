@@ -9,13 +9,13 @@ import { Student } from '../.././models/student.model';
 })
 export class GetstudentsService {
   constructor(private _http: HttpClient) {}
-  apiUrl = 'https://studentdatabase-production-6a49.up.railway.app/';
+  apiUrl = 'https://studentdatabase-production-a54b.up.railway.app/';
 
   // Get all data
   getAllData(): Observable<Student[]> {
     return this._http
       .get<Student[]>(
-        'https://studentdatabase-production-6a49.up.railway.app/getAllStudent',
+        'https://studentdatabase-production-a54b.up.railway.app/getAllStudent',
         {
           observe: 'response',
         }
@@ -28,7 +28,7 @@ export class GetstudentsService {
   getSingleStudent(id: number): Observable<any> {
     console.log(id);
     return this._http.get(
-      `https://studentdatabase-production-6a49.up.railway.app/getById/${id}`
+      `https://studentdatabase-production-a54b.up.railway.app/getById/${id}`
     );
   }
 }
